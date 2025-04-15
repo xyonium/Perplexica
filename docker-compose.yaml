@@ -25,6 +25,14 @@ services:
       - uploads:/home/perplexica/uploads
       - ./config.toml:/home/perplexica/config.toml
     restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.perplexica.rule=Host(`aisearch.example.com`)"
+      - "traefik.http.routers.perplexica.entrypoints=websecure"
+      - "traefik.http.routers.perplexica.tls.certresolver=myresolver"
+      - "traefik.http.routers.perplexicahttp.rule=Host(`aisearch.example.com`)"
+      - "traefik.http.routers.perplexicahttp.entrypoints=web"
+      - "traefik.docker.network=reverse-proxy"
 
 networks:
   perplexica-network:
