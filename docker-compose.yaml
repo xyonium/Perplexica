@@ -11,9 +11,9 @@ services:
 
   app:
     image: itzcrazykns1337/perplexica:main
-    build:
-      context: .
-      dockerfile: app.dockerfile
+    #build:
+    #  context: .
+    #  dockerfile: app.dockerfile
     environment:
       - SEARXNG_API_URL=http://searxng:8080
     ports:
