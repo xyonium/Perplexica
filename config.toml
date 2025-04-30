@@ -16,7 +16,7 @@ API_KEY = ""
 
 [MODELS.CUSTOM_OPENAI]
 API_KEY = ""
-API_URL = "http://gpu.example.com:3000/api"
+API_URL = "http://gpu.example.com:18080/api"
 MODEL_NAME = "deepseek-r1"
 
 [MODELS.OLLAMA]
