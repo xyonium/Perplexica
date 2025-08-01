@@ -31,6 +31,8 @@ services:
       - "traefik.http.routers.perplexica.rule=Host(`aisearch.example.com`)"
       - "traefik.http.routers.perplexica.entrypoints=websecure"
       - "traefik.http.routers.perplexica.tls.certresolver=myresolver"
+      - "traefik.http.routers.perplexica.tls.domains[0].main=example.com"
+      - "traefik.http.routers.perplexica.tls.domains[0].sans=*.example.com"
       - "traefik.http.routers.perplexicahttp.rule=Host(`aisearch.example.com`)"
       - "traefik.http.routers.perplexicahttp.entrypoints=web"
       - "traefik.docker.network=reverse-proxy"
