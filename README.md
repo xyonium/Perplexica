@@ -1,6 +1,22 @@
 # 🚀 Perplexica - An AI-powered search engine 🔎 <!-- omit in toc -->
 
-[![Discord](https://dcbadge.vercel.app/api/server/26aArMy8tT?style=flat&compact=true)](https://discord.gg/26aArMy8tT)
+<div align="center" markdown="1">
+   <sup>Special thanks to:</sup>
+   <br>
+   <br>
+   <a href="https://www.warp.dev/perplexica">
+      <img alt="Warp sponsorship" width="400" src="https://github.com/user-attachments/assets/775dd593-9b5f-40f1-bf48-479faff4c27b">
+   </a>
+
+### [Warp, the AI Devtool that lives in your terminal](https://www.warp.dev/perplexica)
+
+[Available for MacOS, Linux, & Windows](https://www.warp.dev/perplexica)
+
+</div>
+
+<hr/>
+
+[![Discord](https://dcbadge.limes.pink/api/server/26aArMy8tT?style=flat)](https://discord.gg/26aArMy8tT)
 
 ![preview](.assets/perplexica-screenshot.png?)
 
@@ -74,6 +90,9 @@ There are mainly 2 ways of installing Perplexica - With Docker, Without Docker. 
    - `OLLAMA`: Your Ollama API URL. You should enter it as `http://host.docker.internal:PORT_NUMBER`. If you installed Ollama on port 11434, use `http://host.docker.internal:11434`. For other ports, adjust accordingly. **You need to fill this if you wish to use Ollama's models instead of OpenAI's**.
    - `GROQ`: Your Groq API key. **You only need to fill this if you wish to use Groq's hosted models**.
    - `ANTHROPIC`: Your Anthropic API key. **You only need to fill this if you wish to use Anthropic models**.
+   - `Gemini`: Your Gemini API key. **You only need to fill this if you wish to use Google's models**.
+   - `DEEPSEEK`: Your Deepseek API key. **Only needed if you want Deepseek models.**
+   - `AIMLAPI`: Your AI/ML API key. **Only needed if you want to use AI/ML API models and embeddings.**
 
      **Note**: You can change these after starting Perplexica from the settings dialog.
 
@@ -95,7 +114,7 @@ There are mainly 2 ways of installing Perplexica - With Docker, Without Docker. 
 2. Clone the repository and rename the `sample.config.toml` file to `config.toml` in the root directory. Ensure you complete all required fields in this file.
 3. After populating the configuration run `npm i`.
 4. Install the dependencies and then execute `npm run build`.
-5. Finally, start the app by running `npm rum start`
+5. Finally, start the app by running `npm run start`
 
 **Note**: Using Docker is recommended as it simplifies the setup process, especially for managing environment variables and dependencies.
 
@@ -116,7 +135,7 @@ If you're encountering an Ollama connection error, it is likely due to the backe
 
 3. **Linux Users - Expose Ollama to Network:**
 
-   - Inside `/etc/systemd/system/ollama.service`, you need to add `Environment="OLLAMA_HOST=0.0.0.0"`. Then restart Ollama by `systemctl restart ollama`. For more information see [Ollama docs](https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux)
+   - Inside `/etc/systemd/system/ollama.service`, you need to add `Environment="OLLAMA_HOST=0.0.0.0:11434"`. (Change the port number if you are using a different one.) Then reload the systemd manager configuration with `systemctl daemon-reload`, and restart Ollama by `systemctl restart ollama`. For more information see [Ollama docs](https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux)
 
    - Ensure that the port (default is 11434) is not blocked by your firewall.
 
